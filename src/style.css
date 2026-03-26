@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --rosa: #f4d7db;
+  --gris-fondo: #f3f4f6;
+  --gris-suave: #e5e7eb;
+  --texto: #1f2937;
+  --texto-secundario: #6b7280;
+  --blanco: #ffffff;
+  --negro: #111827;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background:
+    linear-gradient(135deg, rgba(244, 215, 219, 0.55), rgba(243, 244, 246, 0.95));
+  color: var(--texto);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+}
+
+.tracker-card {
+  width: 100%;
+  max-width: 620px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 32px;
+  box-shadow: 0 18px 50px rgba(31, 41, 55, 0.08);
+  padding: 32px;
+}
+
+.tracker-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.tracker-label {
+  display: inline-block;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--texto-secundario);
+  margin-bottom: 10px;
+}
+
+.tracker-header h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.1;
+  margin-bottom: 12px;
+  color: var(--negro);
+}
+
+.tracker-subtitle {
+  color: var(--texto-secundario);
+  font-size: 0.98rem;
+}
+
+.tracker-form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.tracker-input {
+  flex: 1;
+  border: 1px solid var(--gris-suave);
+  background: var(--blanco);
+  border-radius: 999px;
+  padding: 14px 18px;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.tracker-input:focus {
+  border-color: #c4b5fd;
+  box-shadow: 0 0 0 4px rgba(196, 181, 253, 0.18);
+}
+
+.tracker-add-button {
+  border: none;
+  background: var(--negro);
+  color: var(--blanco);
+  padding: 14px 20px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  white-space: nowrap;
+}
+
+.tracker-add-button:hover {
+  transform: translateY(-1px);
+  opacity: 0.96;
+}
+
+.tracker-info {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.tracker-resumen {
+  color: var(--texto-secundario);
+  font-size: 0.96rem;
+}
+
+.tracker-empty {
+  text-align: center;
+  color: #9ca3af;
+  margin-bottom: 16px;
+}
+
+.tracker-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tracker-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: #f9fafb;
+  border: 1px solid #eef0f3;
+  border-radius: 20px;
+  padding: 14px 16px;
+  transition: 0.2s ease;
+}
+
+.tracker-item:hover {
+  background: #ffffff;
+  box-shadow: 0 8px 20px rgba(31, 41, 55, 0.05);
+}
+
+.tracker-item-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  flex: 1;
+}
+
+.tracker-item-left input[type='checkbox'] {
+  width: 18px;
+  height: 18px;
+  accent-color: #111827;
+  cursor: pointer;
+}
+
+.tracker-item-left span {
+  color: var(--texto);
+  word-break: break-word;
+}
+
+.completado {
+  text-decoration: line-through;
+  color: #9ca3af !important;
+}
+
+.tracker-delete-button {
+  border: none;
+  background: #f3f4f6;
+  color: #6b7280;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  flex-shrink: 0;
+}
+
+.tracker-delete-button:hover {
+  background: #111827;
+  color: #ffffff;
+}
+
+@media (max-width: 640px) {
+  .tracker-card {
+    padding: 24px 18px;
+    border-radius: 24px;
+  }
+
+  .tracker-form {
+    flex-direction: column;
+  }
+
+  .tracker-add-button {
+    width: 100%;
+  }
+}
+
+.tracker-item {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.tracker-item:hover {
+  transform: translateY(-2px);
+}
+
+.tracker-add-button:active {
+  transform: scale(0.96);
+}
